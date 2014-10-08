@@ -33,6 +33,7 @@ namespace Maze_try2
         private void GenerateMazeButton_Click(object sender, EventArgs e)
         {
             _mazeMatrix[5, 5] = true;
+            _mazeMatrix[6, 7] = true;
         }
     }
 }

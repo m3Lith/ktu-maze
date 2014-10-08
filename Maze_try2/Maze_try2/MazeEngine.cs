@@ -80,11 +80,20 @@ namespace Maze_try2
             var cellToX = cellFromX + _cellSize;
             var cellToY = cellFromY + _cellSize;
 
+            var resizeFactorX = _target.Width/2f;
+            var resizeFactorY = _target.Height/2f;
+
+            var finalFromX = cellFromX / resizeFactorX - 1;
+            var finalFromY = cellFromY / resizeFactorY - 1;
+            var finalToX = cellToX / resizeFactorX - 1;
+            var finalToY = cellToY / resizeFactorY - 1;
+
+
             _mainPrimitiveBatch.DrawQuad(
-                new VertexPositionColor(new Vector3(cellFromX, cellFromY, 0.0f), color),
-                new VertexPositionColor(new Vector3(cellFromX, cellToY, 0.0f), color),
-                new VertexPositionColor(new Vector3(cellToX, cellToY, 0.0f), color),
-                new VertexPositionColor(new Vector3(cellToX, cellFromY, 0.0f), color)
+                new VertexPositionColor(new Vector3(finalFromX, finalFromY, 0.0f), color),
+                new VertexPositionColor(new Vector3(finalFromX, finalToY, 0.0f), color),
+                new VertexPositionColor(new Vector3(finalToX, finalToY, 0.0f), color),
+                new VertexPositionColor(new Vector3(finalToX, finalFromY, 0.0f), color)
                 );
         }
 
@@ -104,18 +113,6 @@ namespace Maze_try2
                 {
                     DrawCell(i,j,_sourceMatrix[i,j] ? Color.DarkGreen : Color.Black);
                 }
-
-            _mainPrimitiveBatch.DrawQuad(
-                new VertexPositionColor(new Vector3(50, 50, 0.0f), Color.Yellow),
-                new VertexPositionColor(new Vector3(50, 100, 0.0f), Color.Yellow),
-                new VertexPositionColor(new Vector3(100, 100, 0.0f), Color.Yellow),
-                new VertexPositionColor(new Vector3(100, 50, 0.0f), Color.Yellow)
-                );
-
-            _mainPrimitiveBatch.DrawLine(
-                new VertexPositionColor(new Vector3(50, 50, 0.0f), Color.Yellow),
-                new VertexPositionColor(new Vector3(50, 100, 0.0f), Color.Yellow)
-                );
 
             _mainPrimitiveBatch.End();
 

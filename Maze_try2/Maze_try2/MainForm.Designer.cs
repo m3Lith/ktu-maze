@@ -28,9 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.MainRenderControl = new SharpDX.Windows.RenderControl();
             this.AlgorithmLabel = new System.Windows.Forms.Label();
             this.AlgorithmComboBox = new System.Windows.Forms.ComboBox();
@@ -46,16 +44,17 @@
             this.SolveButton = new System.Windows.Forms.Button();
             this.HelpButton = new System.Windows.Forms.Button();
             this.msLabel = new System.Windows.Forms.Label();
-            this.pxLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BehaviorTrackBar)).BeginInit();
             this.SuspendLayout();
             // 
             // MainRenderControl
             // 
-            this.MainRenderControl.Location = new System.Drawing.Point(316, 12);
+            this.MainRenderControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.MainRenderControl.Location = new System.Drawing.Point(316, 1);
             this.MainRenderControl.Name = "MainRenderControl";
-            this.MainRenderControl.Size = new System.Drawing.Size(367, 336);
+            this.MainRenderControl.Size = new System.Drawing.Size(549, 479);
             this.MainRenderControl.TabIndex = 0;
             // 
             // AlgorithmLabel
@@ -75,7 +74,6 @@
             this.AlgorithmComboBox.Name = "AlgorithmComboBox";
             this.AlgorithmComboBox.Size = new System.Drawing.Size(226, 21);
             this.AlgorithmComboBox.TabIndex = 2;
-            this.AlgorithmComboBox.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // BehaviorTrackBar
             // 
@@ -110,6 +108,7 @@
             this.SizeTextBox.Name = "SizeTextBox";
             this.SizeTextBox.Size = new System.Drawing.Size(79, 20);
             this.SizeTextBox.TabIndex = 6;
+            this.SizeTextBox.Text = "10";
             // 
             // AnimateCheckBox
             // 
@@ -145,6 +144,7 @@
             this.GenerateMazeButton.TabIndex = 10;
             this.GenerateMazeButton.Text = "Generate Maze";
             this.GenerateMazeButton.UseVisualStyleBackColor = true;
+            this.GenerateMazeButton.Click += new System.EventHandler(this.GenerateMazeButton_Click);
             // 
             // AbortButton
             // 
@@ -182,21 +182,11 @@
             this.msLabel.TabIndex = 14;
             this.msLabel.Text = "ms";
             // 
-            // pxLabel
-            // 
-            this.pxLabel.AutoSize = true;
-            this.pxLabel.Location = new System.Drawing.Point(269, 108);
-            this.pxLabel.Name = "pxLabel";
-            this.pxLabel.Size = new System.Drawing.Size(18, 13);
-            this.pxLabel.TabIndex = 15;
-            this.pxLabel.Text = "px";
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(695, 363);
-            this.Controls.Add(this.pxLabel);
+            this.ClientSize = new System.Drawing.Size(867, 483);
             this.Controls.Add(this.msLabel);
             this.Controls.Add(this.HelpButton);
             this.Controls.Add(this.SolveButton);
@@ -216,7 +206,6 @@
             this.Name = "MainForm";
             this.Text = "Maze Generator";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BehaviorTrackBar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -225,7 +214,6 @@
 
         #endregion
 
-        private System.Windows.Forms.BindingSource bindingSource1;
         private SharpDX.Windows.RenderControl MainRenderControl;
         private System.Windows.Forms.Label AlgorithmLabel;
         private System.Windows.Forms.ComboBox AlgorithmComboBox;
@@ -241,7 +229,6 @@
         private System.Windows.Forms.Button SolveButton;
         private System.Windows.Forms.Button HelpButton;
         private System.Windows.Forms.Label msLabel;
-        private System.Windows.Forms.Label pxLabel;
     }
 }
 

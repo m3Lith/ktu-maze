@@ -19,21 +19,19 @@ namespace Maze_try2
         }
 
         private MazeEngine _mazeEngine;
-        private bool[,] _mazeMatrix;
+        
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            var size = Convert.ToInt32(SizeTextBox.Text);
-            size = (size - 1)*2 + 1;
-            _mazeMatrix = new bool[size,size];
-            _mazeEngine = new MazeEngine(MainRenderControl, _mazeMatrix);
+            _mazeEngine = new MazeEngine(MainRenderControl);
             new Thread(() => Invoke(new MethodInvoker(() => _mazeEngine.Run(MainRenderControl)))){IsBackground =  true}.Start();
         }
 
         private void GenerateMazeButton_Click(object sender, EventArgs e)
         {
-            _mazeMatrix[5, 5] = true;
-            _mazeMatrix[6, 7] = true;
+            var size = (Convert.ToInt32(SizeTextBox.Text) - 1)*2 + 1;
+            MazeData.CreateEmpty(size);
+            MazeData.MazeMatrix[5,5] = CellState.Maze;
         }
     }
 }

@@ -13,22 +13,11 @@ namespace Maze_try2
         private BasicEffect _mainBasicEffect;
         private readonly bool[,] _sourceMatrix;
         private readonly RenderControl _target;
-        private int _mazeSize = 0;
         private int _cellSize = 0;
         private int _offsetX = 0;
         private int _offsetY = 0;
 
-        public int MazeSize
-        {
-            get { return _mazeSize; }
-            set
-            {
-                _mazeSize = value;
-                RecalculateMazeDrawParams();
-            }
-        }
-
-        public MazeEngine(RenderControl target, bool[,] sourceMatrix)
+        public MazeEngine(RenderControl target)
         {
             _graphicsDeviceManager = new GraphicsDeviceManager(this)
             {
@@ -36,8 +25,6 @@ namespace Maze_try2
                 PreferredBackBufferHeight = target.Height
             };
             _target = target;
-            _sourceMatrix = sourceMatrix;
-            MazeSize = sourceMatrix.GetLength(0);
         }
 
         protected override void Initialize()
@@ -48,6 +35,11 @@ namespace Maze_try2
         protected override void Update(GameTime gameTime)
         {
             base.Update(gameTime);
+
+            if (!MazeData.MazeExists)
+                return;
+
+            RecalculateMazeDrawParams();
         }
 
         protected override void LoadContent()
@@ -64,13 +56,13 @@ namespace Maze_try2
 
         private void RecalculateMazeDrawParams()
         {
-            if (_mazeSize == 0)
+            if (!MazeData.MazeExists)
                 return;
 
             var minSize = _target.Width < _target.Height ? _target.Width : _target.Height;
-            _cellSize = minSize/_mazeSize;
-            _offsetX = _target.Width - _cellSize * _mazeSize;
-            _offsetY = _target.Width - _cellSize * _mazeSize;
+            _cellSize = minSize/MazeData.MazeSize;
+            _offsetX = _target.Width - _cellSize * MazeData.MazeSize;
+            _offsetY = _target.Width - _cellSize * MazeData.MazeSize;
         }
 
         private void DrawCell(int x, int y, Color color)
@@ -100,23 +92,21 @@ namespace Maze_try2
         protected override void Draw(GameTime gameTime)
         {
 
-            if (_mazeSize == 0)
+            if (!MazeData.MazeExists)
                 return;
 
-            GraphicsDevice.Clear(Color.Black);
+            GraphicsDevice.Clear(MazeData.MazeColors[CellState.Wall]);
 
             _mainBasicEffect.CurrentTechnique.Passes[0].Apply();
             _mainPrimitiveBatch.Begin();
 
-            for(var i = 0; i < _mazeSize; i++)
-                for (var j = 0; j < _mazeSize; j++)
-                {
-                    DrawCell(i,j,_sourceMatrix[i,j] ? Color.DarkGreen : Color.Black);
-                }
+            for(var i = 0; i < MazeData.MazeSize; i++)
+                for (var j = 0; j < MazeData.MazeSize; j++)
+                    if(MazeData.MazeMatrix[i,j] != CellState.Wall)
+                        DrawCell(i, j, MazeData.MazeColors[MazeData.MazeMatrix[i, j]]);
 
             _mainPrimitiveBatch.End();
 
-            //base.Draw(gameTime);
         }
 
     }

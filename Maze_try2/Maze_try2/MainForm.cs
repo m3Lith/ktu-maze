@@ -33,5 +33,10 @@ namespace Maze_try2
             MazeData.CreateEmpty(size);
             MazeData.MazeMatrix[5,5] = CellState.Maze;
         }
+
+        private void HelpButton_Click(object sender, EventArgs e)
+        {
+            new HelpForm().Show();
+        }
     }
 }

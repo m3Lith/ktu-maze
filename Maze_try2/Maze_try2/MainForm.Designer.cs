@@ -172,6 +172,7 @@
             this.HelpButton.TabIndex = 13;
             this.HelpButton.Text = "Help me";
             this.HelpButton.UseVisualStyleBackColor = true;
+            this.HelpButton.Click += new System.EventHandler(this.HelpButton_Click);
             // 
             // msLabel
             // 

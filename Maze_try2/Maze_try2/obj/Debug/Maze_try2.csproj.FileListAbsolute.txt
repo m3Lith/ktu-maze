@@ -31,3 +31,37 @@ c:\users\m3\documents\visual studio 2013\Projects\Maze_try2\Maze_try2\obj\Debug\
 c:\users\m3\documents\visual studio 2013\Projects\Maze_try2\Maze_try2\obj\Debug\Maze_try2.exe
 c:\users\m3\documents\visual studio 2013\Projects\Maze_try2\Maze_try2\obj\Debug\Maze_try2.pdb
 c:\Users\m3\Documents\Visual Studio 2013\Projects\Maze_try2\Maze_try2\obj\Debug\Maze_try2.MainForm.resources
+D:\dev\ktu-maze\Maze_try2\Maze_try2\bin\Debug\Maze_try2.exe.config
+D:\dev\ktu-maze\Maze_try2\Maze_try2\bin\Debug\Assimp32.dll
+D:\dev\ktu-maze\Maze_try2\Maze_try2\bin\Debug\Assimp64.dll
+D:\dev\ktu-maze\Maze_try2\Maze_try2\bin\Debug\Maze_try2.exe
+D:\dev\ktu-maze\Maze_try2\Maze_try2\bin\Debug\Maze_try2.pdb
+D:\dev\ktu-maze\Maze_try2\Maze_try2\bin\Debug\SharpDX.D3DCompiler.dll
+D:\dev\ktu-maze\Maze_try2\Maze_try2\bin\Debug\SharpDX.Direct2D1.dll
+D:\dev\ktu-maze\Maze_try2\Maze_try2\bin\Debug\SharpDX.Direct3D11.dll
+D:\dev\ktu-maze\Maze_try2\Maze_try2\bin\Debug\SharpDX.dll
+D:\dev\ktu-maze\Maze_try2\Maze_try2\bin\Debug\SharpDX.DXGI.dll
+D:\dev\ktu-maze\Maze_try2\Maze_try2\bin\Debug\SharpDX.Toolkit.Compiler.dll
+D:\dev\ktu-maze\Maze_try2\Maze_try2\bin\Debug\SharpDX.Toolkit.dll
+D:\dev\ktu-maze\Maze_try2\Maze_try2\bin\Debug\SharpDX.Toolkit.Game.dll
+D:\dev\ktu-maze\Maze_try2\Maze_try2\bin\Debug\SharpDX.Toolkit.Graphics.dll
+D:\dev\ktu-maze\Maze_try2\Maze_try2\bin\Debug\SharpDX.Direct3D9.dll
+D:\dev\ktu-maze\Maze_try2\Maze_try2\bin\Debug\AssimpNet.dll
+D:\dev\ktu-maze\Maze_try2\Maze_try2\bin\Debug\SharpDX.xml
+D:\dev\ktu-maze\Maze_try2\Maze_try2\bin\Debug\SharpDX.Direct3D11.xml
+D:\dev\ktu-maze\Maze_try2\Maze_try2\bin\Debug\SharpDX.DXGI.xml
+D:\dev\ktu-maze\Maze_try2\Maze_try2\bin\Debug\SharpDX.Toolkit.xml
+D:\dev\ktu-maze\Maze_try2\Maze_try2\bin\Debug\SharpDX.Toolkit.Game.xml
+D:\dev\ktu-maze\Maze_try2\Maze_try2\bin\Debug\SharpDX.Toolkit.Graphics.xml
+D:\dev\ktu-maze\Maze_try2\Maze_try2\bin\Debug\SharpDX.Toolkit.Compiler.xml
+D:\dev\ktu-maze\Maze_try2\Maze_try2\bin\Debug\SharpDX.D3DCompiler.xml
+D:\dev\ktu-maze\Maze_try2\Maze_try2\bin\Debug\SharpDX.Direct2D1.xml
+D:\dev\ktu-maze\Maze_try2\Maze_try2\bin\Debug\SharpDX.Direct3D9.xml
+D:\dev\ktu-maze\Maze_try2\Maze_try2\bin\Debug\AssimpNet.xml
+D:\dev\ktu-maze\Maze_try2\Maze_try2\obj\Debug\Maze_try2.csprojResolveAssemblyReference.cache
+D:\dev\ktu-maze\Maze_try2\Maze_try2\obj\Debug\Maze_try2.HelpForm.resources
+D:\dev\ktu-maze\Maze_try2\Maze_try2\obj\Debug\Maze_try2.MainForm.resources
+D:\dev\ktu-maze\Maze_try2\Maze_try2\obj\Debug\Maze_try2.Properties.Resources.resources
+D:\dev\ktu-maze\Maze_try2\Maze_try2\obj\Debug\Maze_try2.csproj.GenerateResource.Cache
+D:\dev\ktu-maze\Maze_try2\Maze_try2\obj\Debug\Maze_try2.exe
+D:\dev\ktu-maze\Maze_try2\Maze_try2\obj\Debug\Maze_try2.pdb

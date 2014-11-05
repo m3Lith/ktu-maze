@@ -30,8 +30,10 @@ namespace Maze_try2
         private void GenerateMazeButton_Click(object sender, EventArgs e)
         {
             var size = (Convert.ToInt32(SizeTextBox.Text) - 1)*2 + 1;
-            MazeData.CreateEmpty(size);
-            MazeData.MazeMatrix[5,5] = CellState.Maze;
+            var alg = new KruskalsAlgorithm();
+            var delay = Convert.ToInt32(DelayTextBox.Text == string.Empty ? "0" : DelayTextBox.Text);
+
+            new Thread(() => alg.GenerateMaze(size, delay)) {IsBackground = true}.Start();
         }
 
         private void HelpButton_Click(object sender, EventArgs e)

@@ -10,7 +10,7 @@ namespace Maze_try2
     public enum CellState
     {
         Wall,
-        Maze,
+        Walkway,
         Generating
     }
 
@@ -24,13 +24,12 @@ namespace Maze_try2
             MazeColors = new Dictionary<CellState, Color>
             {
                 {CellState.Wall, Color.Black},
-                {CellState.Maze, Color.Green},
+                {CellState.Walkway, Color.Green},
                 {CellState.Generating, Color.BurlyWood}
             };
         }
 
         public static Dictionary<CellState, Color> MazeColors { get; private set; }
-        
         public static CellState[,] MazeMatrix { get; set; }
         public static int MazeSize { get; set; }
         public static bool MazeExists { get; set; }

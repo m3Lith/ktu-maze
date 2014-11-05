@@ -63,6 +63,8 @@ namespace Maze_try2
             _cellSize = minSize/MazeData.MazeSize;
             _offsetX = _target.Width - _cellSize * MazeData.MazeSize;
             _offsetY = _target.Width - _cellSize * MazeData.MazeSize;
+            _offsetX = 0;
+            _offsetY = 0;
         }
 
         private void DrawCell(int x, int y, Color color)

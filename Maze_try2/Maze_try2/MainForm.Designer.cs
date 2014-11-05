@@ -38,7 +38,7 @@
             this.SizeTextBox = new System.Windows.Forms.TextBox();
             this.AnimateCheckBox = new System.Windows.Forms.CheckBox();
             this.DelayLabel = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.DelayTextBox = new System.Windows.Forms.TextBox();
             this.GenerateMazeButton = new System.Windows.Forms.Button();
             this.AbortButton = new System.Windows.Forms.Button();
             this.SolveButton = new System.Windows.Forms.Button();
@@ -131,10 +131,10 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(188, 146);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(79, 20);
-            this.textBox1.TabIndex = 9;
+            this.DelayTextBox.Location = new System.Drawing.Point(188, 146);
+            this.DelayTextBox.Name = "DelayTextBox";
+            this.DelayTextBox.Size = new System.Drawing.Size(79, 20);
+            this.DelayTextBox.TabIndex = 9;
             // 
             // GenerateMazeButton
             // 
@@ -193,7 +193,7 @@
             this.Controls.Add(this.SolveButton);
             this.Controls.Add(this.AbortButton);
             this.Controls.Add(this.GenerateMazeButton);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.DelayTextBox);
             this.Controls.Add(this.DelayLabel);
             this.Controls.Add(this.AnimateCheckBox);
             this.Controls.Add(this.SizeTextBox);
@@ -224,7 +224,7 @@
         private System.Windows.Forms.TextBox SizeTextBox;
         private System.Windows.Forms.CheckBox AnimateCheckBox;
         private System.Windows.Forms.Label DelayLabel;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox DelayTextBox;
         private System.Windows.Forms.Button GenerateMazeButton;
         private System.Windows.Forms.Button AbortButton;
         private System.Windows.Forms.Button SolveButton;

@@ -40,5 +40,36 @@ namespace Maze_try2
         {
             new HelpForm().Show();
         }
+
+        private void DelayTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void SizeTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void AnimateCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            //DelayTextBox.Enabled = AnimateCheckBox.Checked;
+            if (AnimateCheckBox.Checked)
+            {
+                DelayTextBox.Enabled = true; 
+                DelayTextBox.Text = "1";
+            }
+            else
+            {
+                DelayTextBox.Enabled = false;
+                DelayTextBox.Text = "0";
+            }
+        }
     }
 }

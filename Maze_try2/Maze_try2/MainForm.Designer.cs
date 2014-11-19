@@ -1,4 +1,6 @@
-﻿namespace Maze_try2
+﻿using System.Windows.Forms;
+
+namespace Maze_try2
 {
     partial class MainForm
     {
@@ -105,10 +107,12 @@
             // SizeTextBox
             // 
             this.SizeTextBox.Location = new System.Drawing.Point(188, 105);
+            this.SizeTextBox.MaxLength = 5;
             this.SizeTextBox.Name = "SizeTextBox";
             this.SizeTextBox.Size = new System.Drawing.Size(79, 20);
             this.SizeTextBox.TabIndex = 6;
             this.SizeTextBox.Text = "10";
+            this.SizeTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SizeTextBox_KeyPress);
             // 
             // AnimateCheckBox
             // 
@@ -119,6 +123,7 @@
             this.AnimateCheckBox.TabIndex = 7;
             this.AnimateCheckBox.Text = "Animate";
             this.AnimateCheckBox.UseVisualStyleBackColor = true;
+            this.AnimateCheckBox.CheckedChanged += new System.EventHandler(this.AnimateCheckBox_CheckedChanged);
             // 
             // DelayLabel
             // 
@@ -129,12 +134,16 @@
             this.DelayLabel.TabIndex = 8;
             this.DelayLabel.Text = "Animation delay:";
             // 
-            // textBox1
+            // DelayTextBox
             // 
+            this.DelayTextBox.Enabled = false;
             this.DelayTextBox.Location = new System.Drawing.Point(188, 146);
+            this.DelayTextBox.MaxLength = 5;
             this.DelayTextBox.Name = "DelayTextBox";
             this.DelayTextBox.Size = new System.Drawing.Size(79, 20);
             this.DelayTextBox.TabIndex = 9;
+            this.DelayTextBox.Text = "0";
+            this.DelayTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DelayTextBox_KeyPress);
             // 
             // GenerateMazeButton
             // 

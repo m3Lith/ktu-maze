@@ -41,6 +41,9 @@ namespace Maze_try2
                 case 1:
                     alg = new RecursiveDivisionAlgorithm(rng);
                     break;
+                case 2:
+                    alg = new SidewinderAlgorithm(rng);
+                    break;
                 default:
                     throw new Exception("Algorithm index not found");
             }
@@ -83,6 +86,11 @@ namespace Maze_try2
                 DelayTextBox.Enabled = false;
                 DelayTextBox.Text = "0";
             }
+        }
+
+        private void AbortButton_Click(object sender, EventArgs e)
+        {
+            AppData.AppState = AppData.AppStates.Idle;
         }
     }
 }

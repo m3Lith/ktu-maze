@@ -74,7 +74,8 @@ namespace Maze_try2
             this.AlgorithmComboBox.FormattingEnabled = true;
             this.AlgorithmComboBox.Items.AddRange(new object[] {
             "Kruskal\'s",
-            "Recursive division"});
+            "Recursive division",
+            "Sidewinder"});
             this.AlgorithmComboBox.Location = new System.Drawing.Point(72, 10);
             this.AlgorithmComboBox.Name = "AlgorithmComboBox";
             this.AlgorithmComboBox.Size = new System.Drawing.Size(226, 21);
@@ -166,6 +167,7 @@ namespace Maze_try2
             this.AbortButton.TabIndex = 11;
             this.AbortButton.Text = "Abort";
             this.AbortButton.UseVisualStyleBackColor = true;
+            this.AbortButton.Click += new System.EventHandler(this.AbortButton_Click);
             // 
             // SolveButton
             // 

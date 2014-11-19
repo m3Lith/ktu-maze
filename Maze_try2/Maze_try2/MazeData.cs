@@ -34,7 +34,6 @@ namespace Maze_try2
         public static int MazeSize { get; set; }
         public static bool MazeExists { get; set; }
 
-
         public static void CreateEmpty(int size, bool preFill = false)
         {
             MazeMatrix = new CellState[size, size];

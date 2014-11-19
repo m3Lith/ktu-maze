@@ -24,15 +24,28 @@ namespace Maze_try2
         private void Form1_Load(object sender, EventArgs e)
         {
             _mazeEngine = new MazeEngine(MainRenderControl);
+            AlgorithmComboBox.SelectedIndex = 0;
             new Thread(() => Invoke(new MethodInvoker(() => _mazeEngine.Run(MainRenderControl)))){IsBackground =  true}.Start();
         }
 
         private void GenerateMazeButton_Click(object sender, EventArgs e)
         {
             var size = (Convert.ToInt32(SizeTextBox.Text) - 1)*2 + 1;
-            var alg = new KruskalsAlgorithm();
-            var delay = Convert.ToInt32(DelayTextBox.Text == string.Empty ? "0" : DelayTextBox.Text);
-
+            var rng = new Random();
+            IMazeAlgorithm alg;
+            switch (AlgorithmComboBox.SelectedIndex)
+            {
+                case 0:
+                    alg = new KruskalsAlgorithm(rng);
+                    break;
+                case 1:
+                    alg = new RecursiveDivisionAlgorithm(rng);
+                    break;
+                default:
+                    throw new Exception("Algorithm index not found");
+            }
+            
+            var delay = Convert.ToInt32(string.IsNullOrEmpty(DelayTextBox.Text) ? "0" : DelayTextBox.Text);
             new Thread(() => alg.GenerateMaze(size, delay)) {IsBackground = true}.Start();
         }
 

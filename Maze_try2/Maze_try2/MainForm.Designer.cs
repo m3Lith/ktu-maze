@@ -72,6 +72,9 @@ namespace Maze_try2
             // 
             this.AlgorithmComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.AlgorithmComboBox.FormattingEnabled = true;
+            this.AlgorithmComboBox.Items.AddRange(new object[] {
+            "Kruskal\'s",
+            "Recursive division"});
             this.AlgorithmComboBox.Location = new System.Drawing.Point(72, 10);
             this.AlgorithmComboBox.Name = "AlgorithmComboBox";
             this.AlgorithmComboBox.Size = new System.Drawing.Size(226, 21);

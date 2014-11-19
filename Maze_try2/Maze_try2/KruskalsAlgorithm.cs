@@ -24,16 +24,16 @@ namespace Maze_try2
 
             var tree = new KruskalTree(size);
             
-            var _mazeWidth = size;
-            var _mazeHeight = size;
+            var mazeWidth = size;
+            var mazeHeight = size;
 
             AppData.AppState = AppData.AppStates.LongTask;
 
             var walls = new LinkedList<MazePoint>();
-            for (var i = 1; i < _mazeWidth - 1; i++)
+            for (var i = 1; i < mazeWidth - 1; i++)
             {
                 var extra = i % 2 == 0 ? 1 : 0;
-                for (var j = 2 - extra; j < _mazeHeight - 2 + extra; j += 2)
+                for (var j = 2 - extra; j < mazeHeight - 2 + extra; j += 2)
                     if (MazeData.MazeMatrix[i, j] == CellState.Wall)
                         walls.AddLast(new MazePoint(i, j));
             }

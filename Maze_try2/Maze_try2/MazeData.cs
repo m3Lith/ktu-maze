@@ -35,12 +35,18 @@ namespace Maze_try2
         public static bool MazeExists { get; set; }
 
 
-        public static void CreateEmpty(int size)
+        public static void CreateEmpty(int size, bool preFill = false)
         {
             MazeMatrix = new CellState[size, size];
-            for (var i = 0; i < size; i++)
-                for (var j = 0; j < size; j++)
-                    MazeMatrix[i,j] = CellState.Wall;
+
+            if (preFill)
+                for (var i = 1; i < size - 1; i++)
+                    for (var j = 1; j < size - 1; j++)
+                        MazeMatrix[i, j] = CellState.Walkway;
+            else
+                for (var i = 0; i < size; i++)
+                    for (var j = 0; j < size; j++)
+                        MazeMatrix[i,j] = CellState.Wall;
             MazeSize = size;
             MazeExists = true;
         }

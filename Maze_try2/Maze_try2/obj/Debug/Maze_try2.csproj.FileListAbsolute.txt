@@ -65,9 +65,9 @@ D:\dev\ktu-maze\Maze_try2\Maze_try2\obj\Debug\Maze_try2.Properties.Resources.res
 D:\dev\ktu-maze\Maze_try2\Maze_try2\obj\Debug\Maze_try2.csproj.GenerateResource.Cache
 D:\dev\ktu-maze\Maze_try2\Maze_try2\obj\Debug\Maze_try2.exe
 D:\dev\ktu-maze\Maze_try2\Maze_try2\obj\Debug\Maze_try2.pdb
-C:\Users\Gediminas\Documents\Visual Studio 2013\Projects\ktu-maze\Maze_try2\Maze_try2\bin\Debug\Maze_try2.exe.config
 C:\Users\Gediminas\Documents\Visual Studio 2013\Projects\ktu-maze\Maze_try2\Maze_try2\bin\Debug\Assimp32.dll
 C:\Users\Gediminas\Documents\Visual Studio 2013\Projects\ktu-maze\Maze_try2\Maze_try2\bin\Debug\Assimp64.dll
+C:\Users\Gediminas\Documents\Visual Studio 2013\Projects\ktu-maze\Maze_try2\Maze_try2\bin\Debug\Maze_try2.exe.config
 C:\Users\Gediminas\Documents\Visual Studio 2013\Projects\ktu-maze\Maze_try2\Maze_try2\bin\Debug\Maze_try2.exe
 C:\Users\Gediminas\Documents\Visual Studio 2013\Projects\ktu-maze\Maze_try2\Maze_try2\bin\Debug\Maze_try2.pdb
 C:\Users\Gediminas\Documents\Visual Studio 2013\Projects\ktu-maze\Maze_try2\Maze_try2\bin\Debug\SharpDX.D3DCompiler.dll

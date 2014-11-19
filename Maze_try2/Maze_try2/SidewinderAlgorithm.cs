@@ -29,8 +29,10 @@ namespace Maze_try2
 
             var verticalInfluenceValue = 500;
             var binaryTreeValue = 0;
-            
-            for (var j = 1; j < mazeHeight - 1; j += 2)
+
+            const bool startFromBottom = false;
+
+            for (var j = startFromBottom ? 1 : mazeHeight - 2; startFromBottom ? j < mazeHeight - 1 : j > 0 ; j += startFromBottom ? 2 : -2)
             {
                 if (AppData.AppState != AppData.AppStates.LongTask)
                     break;
@@ -46,7 +48,7 @@ namespace Maze_try2
                     //var dirX = binaryTreeValue == 0 && (NWBiasRadioButton.Checked || SWBiasRadioButton.Checked) ? -1 : 1;
                     //var dirY = binaryTreeValue == 0 && (SWBiasRadioButton.Checked || SEBiasRadioButton.Checked) ? 1 : -1;
 
-                    var dirX = -1;
+                    var dirX = 1;
                     var dirY = 1;
 
                     var canGoHorizontal = dirX > 0 ? i < MazeData.MazeSize - 2 : i > 2;
@@ -75,7 +77,8 @@ namespace Maze_try2
                     }
                     else
                     {
-                        var rand = useBinaryTree ? 0 : _rng.Next(0, setLength) * 2;
+                        //var rand = useBinaryTree ? 0 : _rng.Next(0, setLength) * 2;
+                        var rand = _rng.Next(0, setLength) * 2;
                         setLength = 1;
                         MazeData.MazeMatrix[i - rand, j + dirY] = CellState.Walkway;
                     }

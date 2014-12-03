@@ -1,8 +1,11 @@
-﻿using System.Linq;
+﻿using System;
+using System.Drawing;
+using System.Linq;
 using SharpDX;
 using SharpDX.Toolkit;
 using SharpDX.Toolkit.Graphics;
 using SharpDX.Windows;
+using Color = SharpDX.Color;
 
 namespace Maze_try2
 {
@@ -25,6 +28,7 @@ namespace Maze_try2
                 PreferredBackBufferHeight = target.Height
             };
             _target = target;
+            
         }
 
         protected override void Initialize()
@@ -61,16 +65,15 @@ namespace Maze_try2
 
             var minSize = _target.Width < _target.Height ? _target.Width : _target.Height;
             _cellSize = minSize/MazeData.MazeSize;
-            _offsetX = _target.Width - _cellSize * MazeData.MazeSize;
-            _offsetY = _target.Width - _cellSize * MazeData.MazeSize;
-            _offsetX = 0;
-            _offsetY = 0;
+            _offsetX = (_target.Width - _cellSize * MazeData.MazeSize)/2;
+            _offsetY = (_target.Height - _cellSize * MazeData.MazeSize)/2;
         }
 
         private void DrawCell(int x, int y, Color color)
         {
             var cellFromX = _offsetX + _cellSize*x;
             var cellFromY = _offsetY + _cellSize*y;
+
             var cellToX = cellFromX + _cellSize;
             var cellToY = cellFromY + _cellSize;
 
@@ -104,11 +107,25 @@ namespace Maze_try2
 
             for(var i = 0; i < MazeData.MazeSize; i++)
                 for (var j = 0; j < MazeData.MazeSize; j++)
-                    if(MazeData.MazeMatrix[i,j] != CellState.Wall)
-                        DrawCell(i, j, MazeData.MazeColors[MazeData.MazeMatrix[i, j]]);
+                {
+                    // TODO: fix this hack (add a mutex)
+                    try
+                    {
+                        if (MazeData.MazeMatrix[i, j] != null && MazeData.MazeMatrix[i, j].Display != MazeData.MazeColors[CellState.Wall])
+                            DrawCell(i, j, MazeData.MazeMatrix[i, j].Display);
+                    }
+                    catch (NullReferenceException)
+                    {
+                        
+                    }
+                }
 
             _mainPrimitiveBatch.End();
+        }
 
+        public void SaveImage(string path)
+        {
+           GraphicsDevice.BackBuffer.Save(path,ImageFileType.Png);
         }
 
     }

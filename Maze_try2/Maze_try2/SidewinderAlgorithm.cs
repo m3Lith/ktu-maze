@@ -4,7 +4,7 @@ using System.Threading;
 
 namespace Maze_try2
 {
-    class SidewinderAlgorithm : IMazeAlgorithm
+    class SidewinderAlgorithm : BaseAlgorithm
     {
         private Random _rng;
 
@@ -18,7 +18,7 @@ namespace Maze_try2
             _rng = rng;
         }
 
-        public void GenerateMaze(int size, int animationDelay = 0)
+        public override void GenerateMaze(int size, int animationDelay = 0)
         {
             MazeData.CreateEmpty(size);
             
@@ -72,23 +72,23 @@ namespace Maze_try2
                     if (digHorizontal)
                     {
                         setLength++;
-                        MazeData.MazeMatrix[i + dirX, j] = CellState.Walkway;
-                        MazeData.MazeMatrix[i + dirX * 2, j] = CellState.Walkway;
+                        MazeData.MazeMatrix[i + dirX, j].State = CellState.Walkway;
+                        MazeData.MazeMatrix[i + dirX * 2, j].State = CellState.Walkway;
                     }
                     else
                     {
                         //var rand = useBinaryTree ? 0 : _rng.Next(0, setLength) * 2;
                         var rand = _rng.Next(0, setLength) * 2;
                         setLength = 1;
-                        MazeData.MazeMatrix[i - rand, j + dirY] = CellState.Walkway;
+                        MazeData.MazeMatrix[i - rand, j + dirY].State = CellState.Walkway;
                     }
-                    MazeData.MazeMatrix[i, j] = CellState.Walkway;
+                    MazeData.MazeMatrix[i, j].State = CellState.Walkway;
 
                     if (animationDelay > 0)
                         Thread.Sleep(animationDelay);
                 }
             }
-
+            MakeEntranceExit();
             AppData.AppState = AppData.AppStates.Idle;
         }
     }

@@ -4,7 +4,7 @@ using System.Threading;
 
 namespace Maze_try2
 {
-    class KruskalsAlgorithm : IMazeAlgorithm
+    class KruskalsAlgorithm : BaseAlgorithm
     {
         private Random _rng;
 
@@ -18,7 +18,7 @@ namespace Maze_try2
             _rng = rng;
         }
 
-        public void GenerateMaze(int size, int animationDelay = 0)
+        public override void GenerateMaze(int size, int animationDelay = 0)
         {
             MazeData.CreateEmpty(size);
 
@@ -34,7 +34,7 @@ namespace Maze_try2
             {
                 var extra = i % 2 == 0 ? 1 : 0;
                 for (var j = 2 - extra; j < mazeHeight - 2 + extra; j += 2)
-                    if (MazeData.MazeMatrix[i, j] == CellState.Wall)
+                    if (MazeData.MazeMatrix[i, j].State == CellState.Wall)
                         walls.AddLast(new MazePoint(i, j));
             }
             walls.Shuffle();
@@ -56,9 +56,9 @@ namespace Maze_try2
                 var connected = tree.AreConnected(wall.X - x, wall.Y - y, wall.X + x, wall.Y + y);
                 if (!connected)
                 {
-                    MazeData.MazeMatrix[wall.X - x, wall.Y - y] = CellState.Walkway;
-                    MazeData.MazeMatrix[wall.X, wall.Y] = CellState.Walkway;
-                    MazeData.MazeMatrix[wall.X + x, wall.Y + y] = CellState.Walkway;
+                    MazeData.MazeMatrix[wall.X - x, wall.Y - y].State = CellState.Walkway;
+                    MazeData.MazeMatrix[wall.X, wall.Y].State = CellState.Walkway;
+                    MazeData.MazeMatrix[wall.X + x, wall.Y + y].State = CellState.Walkway;
                     tree.Connect(wall.X - x, wall.Y - y, wall.X + x, wall.Y + y);
 
                     if (animationDelay > 0)
@@ -68,8 +68,8 @@ namespace Maze_try2
                 walls.RemoveFirst();
             }
 
+            MakeEntranceExit();
             AppData.AppState = AppData.AppStates.Idle;
-
 
             /*MakeEntranceExit(AnimateCheckBox.Checked);
             if (!AnimateCheckBox.Checked)

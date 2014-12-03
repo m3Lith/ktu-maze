@@ -32,7 +32,7 @@ namespace Maze_try2
         {
             var size = (Convert.ToInt32(SizeTextBox.Text) - 1)*2 + 1;
             var rng = new Random();
-            IMazeAlgorithm alg;
+            BaseAlgorithm alg;
             switch (AlgorithmComboBox.SelectedIndex)
             {
                 case 0:
@@ -47,7 +47,6 @@ namespace Maze_try2
                 default:
                     throw new Exception("Algorithm index not found");
             }
-            
             var delay = Convert.ToInt32(string.IsNullOrEmpty(DelayTextBox.Text) ? "0" : DelayTextBox.Text);
             new Thread(() => alg.GenerateMaze(size, delay)) {IsBackground = true}.Start();
         }
@@ -91,6 +90,26 @@ namespace Maze_try2
         private void AbortButton_Click(object sender, EventArgs e)
         {
             AppData.AppState = AppData.AppStates.Idle;
+        }
+
+        private void SolveButton_Click(object sender, EventArgs e)
+        {
+            Solving.Solve();
+        }
+
+        private void SaveButton_Click(object sender, EventArgs e)
+        {
+            var dialog = new SaveFileDialog
+            {
+                Filter = @"png files (*.png)|*.png|All files (*.*)|*.*"
+            };
+            //dialog.RestoreDirectory = true;
+
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                _mazeEngine.SaveImage(dialog.FileName);
+            }
+            
         }
     }
 }

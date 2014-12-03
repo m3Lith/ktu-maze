@@ -4,7 +4,7 @@ using System.Threading;
 
 namespace Maze_try2
 {
-    class RecursiveDivisionAlgorithm : IMazeAlgorithm
+    class RecursiveDivisionAlgorithm : BaseAlgorithm
     {
         private Random _rng;
 
@@ -18,7 +18,7 @@ namespace Maze_try2
             _rng = rng;
         }
 
-        public void GenerateMaze(int size, int animationDelay = 0)
+        public override void GenerateMaze(int size, int animationDelay = 0)
         {
             MazeData.CreateEmpty(size, true);
             
@@ -28,8 +28,10 @@ namespace Maze_try2
             AppData.AppState = AppData.AppStates.LongTask;
 
             RecursivelyGenerate(0, 0, mazeWidth, mazeHeight, 1, animationDelay);
-            
+
+            MakeEntranceExit();   
             AppData.AppState = AppData.AppStates.Idle;
+         
         }
 
 
@@ -48,13 +50,13 @@ namespace Maze_try2
                 var col = _rng.Next(0, height / 2) * 2 + 1;
                 for (var i = 1; i < height - 1; i++)
                 {
-                    MazeData.MazeMatrix[x + row, y + i] = CellState.Wall;
+                    MazeData.MazeMatrix[x + row, y + i].State = CellState.Wall;
                     if (animationDelay > 0)
                         Thread.Sleep(animationDelay);
                     if (AppData.AppState != AppData.AppStates.LongTask)
                         return;
                 }
-                MazeData.MazeMatrix[x + row, y + col] = CellState.Walkway;
+                MazeData.MazeMatrix[x + row, y + col].State = CellState.Walkway;
 
                 if (animationDelay > 0)
                     Thread.Sleep(animationDelay);
@@ -68,13 +70,13 @@ namespace Maze_try2
                 var col = _rng.Next(1, height / 2) * 2;
                 for (var i = 1; i < width - 1; i++)
                 {
-                    MazeData.MazeMatrix[x + i, y + col] = CellState.Wall;
+                    MazeData.MazeMatrix[x + i, y + col].State = CellState.Wall;
                     if (animationDelay > 0)
                         Thread.Sleep(animationDelay);
                     if (AppData.AppState != AppData.AppStates.LongTask)
                         return;
                 }
-                MazeData.MazeMatrix[x + row, y + col] = CellState.Walkway;
+                MazeData.MazeMatrix[x + row, y + col].State = CellState.Walkway;
                 if (animationDelay > 0)
                     Thread.Sleep(animationDelay);
 

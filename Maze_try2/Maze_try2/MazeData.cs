@@ -56,8 +56,8 @@ namespace Maze_try2
 
             MazeColors = new Dictionary<CellState, Color>
             {
-                {CellState.Wall, Color.Black},
-                {CellState.Walkway, Color.Green},
+                {CellState.Wall, Color.Green},
+                {CellState.Walkway, Color.Black},
                 {CellState.Generating, Color.BurlyWood},
                 {CellState.AutoPath, Color.DeepSkyBlue},
                 {CellState.Entrance, Color.Chartreuse},

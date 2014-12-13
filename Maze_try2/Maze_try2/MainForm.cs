@@ -101,7 +101,7 @@ namespace Maze_try2
         {
             var dialog = new SaveFileDialog
             {
-                Filter = @"png files (*.png)|*.png|All files (*.*)|*.*"
+                Filter = @"png images (*.png)|*.png|All files (*.*)|*.*"
             };
             //dialog.RestoreDirectory = true;
 

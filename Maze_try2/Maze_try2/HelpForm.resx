@@ -118,6 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="HelpLabel.Text" xml:space="preserve">
-    <value>The maze genration uses a Binary Tree algorithm, which can be configured to have a backtracker-like behavior, or a Prim's-like behavior. The maze height and width are always the same, and are determined by the Size setting. Maze solving uses breadth-first search to find the shortest possible path. Generation and solving can be aborted at any time. The maze is rendered using SharpDX.</value>
+    <value>The maze genration uses a Growing Tree algorithm, which can be configured to have a backtracker-like behavior, or a Prim's-like behavior. The maze height and width are always the same, and are determined by the Size setting. Maze solving uses breadth-first search to find the shortest possible path. Generation and solving can be aborted at any time. The maze is rendered using SharpDX.</value>
   </data>
 </root>

@@ -8,14 +8,14 @@ using System.Threading.Tasks;
 
 namespace Maze_try2
 {
-    class Solving
+    static class Solving
     {
         public static void Solve()
         {
             AppData.AppState = AppData.AppStates.LongTask;
 
-            MazePoint[,] precMatrix;
-            int[,] distMatrix;
+            //MazePoint[,] precMatrix;
+            //int[,] distMatrix;
             var solvePath = new List<MazePoint>();
 
             var heatMatrix = HeatMap.Generate(MazeData.EntrancePoint.X, MazeData.EntrancePoint.Y, MazeData.ExitPoint.X, MazeData.ExitPoint.Y);
@@ -38,8 +38,9 @@ namespace Maze_try2
                 //    Thread.Sleep(Convert.ToInt32(DelayTextBox.Text));
             }
 
-            foreach (var solvePoint in solvePath)
-                MazeData.MazeMatrix[solvePoint.X, solvePoint.Y].Display = MazeData.MazeColors[CellState.AutoPath];
+            //foreach (var solvePoint in solvePath)
+            for(var i = 1; i < solvePath.Count - 1; i++)
+                MazeData.MazeMatrix[solvePath[i].X, solvePath[i].Y].Display = MazeData.MazeColors[CellState.AutoPath];
 
             /*if (!AnimateCheckBox.Checked)
             {

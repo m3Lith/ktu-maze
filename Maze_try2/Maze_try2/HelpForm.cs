@@ -21,5 +21,9 @@ namespace Maze_try2
         {
             Close();
         }
+
+        private void HelpForm_Load(object sender, EventArgs e)
+        {
+        }
     }
 }

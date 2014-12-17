@@ -107,6 +107,7 @@
             this.Controls.Add(this.AboutGroupBox);
             this.Name = "HelpForm";
             this.Text = "Help";
+            this.Load += new System.EventHandler(this.HelpForm_Load);
             this.AboutGroupBox.ResumeLayout(false);
             this.HelpGroupBox.ResumeLayout(false);
             this.ResumeLayout(false);

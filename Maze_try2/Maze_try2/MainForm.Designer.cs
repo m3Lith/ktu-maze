@@ -47,6 +47,7 @@ namespace Maze_try2
             this.HelpButton = new System.Windows.Forms.Button();
             this.msLabel = new System.Windows.Forms.Label();
             this.SaveButton = new System.Windows.Forms.Button();
+            this.GenerateHeatMapButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.BehaviorTrackBar)).BeginInit();
             this.SuspendLayout();
             // 
@@ -212,11 +213,22 @@ namespace Maze_try2
             this.SaveButton.UseVisualStyleBackColor = true;
             this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
+            // GenerateHeatMapButton
+            // 
+            this.GenerateHeatMapButton.Location = new System.Drawing.Point(164, 361);
+            this.GenerateHeatMapButton.Name = "GenerateHeatMapButton";
+            this.GenerateHeatMapButton.Size = new System.Drawing.Size(131, 23);
+            this.GenerateHeatMapButton.TabIndex = 16;
+            this.GenerateHeatMapButton.Text = "Generate Heatmap";
+            this.GenerateHeatMapButton.UseVisualStyleBackColor = true;
+            this.GenerateHeatMapButton.Click += new System.EventHandler(this.GenerateHeatMapButton_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(867, 483);
+            this.Controls.Add(this.GenerateHeatMapButton);
             this.Controls.Add(this.SaveButton);
             this.Controls.Add(this.msLabel);
             this.Controls.Add(this.HelpButton);
@@ -261,6 +273,7 @@ namespace Maze_try2
         private System.Windows.Forms.Button HelpButton;
         private System.Windows.Forms.Label msLabel;
         private Button SaveButton;
+        private Button GenerateHeatMapButton;
     }
 }
 

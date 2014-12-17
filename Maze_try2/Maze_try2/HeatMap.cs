@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
+using SharpDX;
 
 namespace Maze_try2
 {
@@ -10,12 +12,12 @@ namespace Maze_try2
             public MazePoint Preceding { get; set; }
         }
 
-        public static HeatPoint[,] Generate(int fromX, int fromY)
+        public static HeatPoint[,] Generate(int fromX, int fromY, bool draw)
         {
-            return Generate(fromX, fromY, -1, -1);
+            return Generate(fromX, fromY, draw, -1, -1);
         }
 
-        public static HeatPoint[,] Generate(int fromX, int fromY, int breakOnX, int breakOnY)
+        public static HeatPoint[,] Generate(int fromX, int fromY, bool draw, int breakOnX, int breakOnY)
         {
             var _mazeWidth = MazeData.MazeSize;
             var _mazeHeight = MazeData.MazeSize;
@@ -101,6 +103,33 @@ namespace Maze_try2
                     }
                 }
             }*/
+
+            if (!draw)
+                return heatMatrix;
+
+            var maxDist = 1;
+            for (var i = 0; i < _mazeWidth; i++)
+                for (var j = 0; j < _mazeHeight; j++)
+                    if (heatMatrix[i, j].Distance > maxDist)
+                        maxDist = heatMatrix[i, j].Distance;
+
+            for (var i = 0; i < _mazeWidth; i++)
+            {
+                for (var j = 0; j < _mazeHeight; j++)
+                {
+                    if (MazeData.MazeMatrix[i, j] == null || MazeData.MazeMatrix[i, j].State == CellState.Wall)
+                        continue;
+
+                    var red = heatMatrix[i, j].Distance * 255 / maxDist;
+                    Color c;
+                    if (heatMatrix[i, j].Distance < 1)
+                        c = MazeData.MazeColors[CellState.Entrance];
+                    else if (heatMatrix[i, j].Distance > maxDist - 1)
+                        c = MazeData.MazeColors[CellState.Furthest];
+                    else c = Color.FromRgba(50 * 256 * 256 + 50 * 256 + red);
+                    MazeData.MazeMatrix[i, j].Display = c;
+                }
+            }
 
             return heatMatrix;
         }

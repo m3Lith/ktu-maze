@@ -127,5 +127,12 @@ namespace Maze_try2
         {
             _behaviorValue = BehaviorTrackBar.Value;
         }
+
+        private void GenerateHeatMapButton_Click(object sender, EventArgs e)
+        {
+            AppData.AppState = AppData.AppStates.LongTask;
+            HeatMap.Generate(MazeData.EntrancePoint.X, MazeData.EntrancePoint.Y, true);
+            AppData.AppState = AppData.AppStates.Idle;
+        }
     }
 }

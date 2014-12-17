@@ -41,7 +41,8 @@ namespace Maze_try2
         Generating,
         AutoPath,
         Entrance,
-        Exit
+        Exit,
+        Furthest
     }
 
     static class MazeData
@@ -61,7 +62,8 @@ namespace Maze_try2
                 {CellState.Generating, Color.BurlyWood},
                 {CellState.AutoPath, Color.DeepSkyBlue},
                 {CellState.Entrance, Color.Chartreuse},
-                {CellState.Exit, Color.Orange}
+                {CellState.Exit, Color.Orange},
+                {CellState.Furthest, Color.Yellow}
             };
 
             Directions = new Dictionary<int, MazePoint>

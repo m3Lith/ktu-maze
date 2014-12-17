@@ -18,7 +18,7 @@ namespace Maze_try2
             //int[,] distMatrix;
             var solvePath = new List<MazePoint>();
 
-            var heatMatrix = HeatMap.Generate(MazeData.EntrancePoint.X, MazeData.EntrancePoint.Y, MazeData.ExitPoint.X, MazeData.ExitPoint.Y);
+            var heatMatrix = HeatMap.Generate(MazeData.EntrancePoint.X, MazeData.EntrancePoint.Y, false, MazeData.ExitPoint.X, MazeData.ExitPoint.Y);
             var currentPoint = new MazePoint(MazeData.ExitPoint.X, MazeData.ExitPoint.Y);
             while (currentPoint != null)
             {

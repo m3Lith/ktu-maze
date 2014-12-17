@@ -18,7 +18,7 @@ namespace Maze_try2
             _rng = rng;
         }
 
-        public override void GenerateMaze(int size, int animationDelay = 0)
+        public override void GenerateMaze(int size, ref double animationDelay, ref int behaviorValue)
         {
             MazeData.CreateEmpty(size);
 
@@ -62,7 +62,7 @@ namespace Maze_try2
                     tree.Connect(wall.X - x, wall.Y - y, wall.X + x, wall.Y + y);
 
                     if (animationDelay > 0)
-                        Thread.Sleep(animationDelay);
+                        Utils.Sleep(animationDelay);
                 }
 
                 walls.RemoveFirst();

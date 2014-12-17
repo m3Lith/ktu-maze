@@ -9,7 +9,7 @@ namespace Maze_try2
 {
     class BaseAlgorithm : IMazeAlgorithm
     {
-        public virtual void GenerateMaze(int size, int animationDelay)
+        public virtual void GenerateMaze(int size, ref double animationDelay, ref int behaviorValue)
         {
             //throw new NotImplementedException("Please define a maze generation algorithm");
         }

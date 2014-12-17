@@ -18,7 +18,7 @@ namespace Maze_try2
             _rng = rng;
         }
 
-        public override void GenerateMaze(int size, int animationDelay = 0)
+        public override void GenerateMaze(int size, ref double animationDelay, ref int behaviorValue)
         {
             MazeData.CreateEmpty(size, true);
             
@@ -35,7 +35,7 @@ namespace Maze_try2
         }
 
 
-        private void RecursivelyGenerate(int x, int y, int width, int height, int depth, int animationDelay)
+        private void RecursivelyGenerate(int x, int y, int width, int height, int depth, double animationDelay)
         {
             if (width < 4 || height < 4)
                 return;
@@ -52,14 +52,14 @@ namespace Maze_try2
                 {
                     MazeData.MazeMatrix[x + row, y + i].State = CellState.Wall;
                     if (animationDelay > 0)
-                        Thread.Sleep(animationDelay);
+                        Utils.Sleep(animationDelay);
                     if (AppData.AppState != AppData.AppStates.LongTask)
                         return;
                 }
                 MazeData.MazeMatrix[x + row, y + col].State = CellState.Walkway;
 
                 if (animationDelay > 0)
-                    Thread.Sleep(animationDelay);
+                    Utils.Sleep(animationDelay);
 
                 RecursivelyGenerate(x, y, row + 1, height, depth + 1, animationDelay);
                 RecursivelyGenerate(x + row, y, width - row, height, depth + 1, animationDelay);
@@ -72,13 +72,13 @@ namespace Maze_try2
                 {
                     MazeData.MazeMatrix[x + i, y + col].State = CellState.Wall;
                     if (animationDelay > 0)
-                        Thread.Sleep(animationDelay);
+                        Utils.Sleep(animationDelay);
                     if (AppData.AppState != AppData.AppStates.LongTask)
                         return;
                 }
                 MazeData.MazeMatrix[x + row, y + col].State = CellState.Walkway;
                 if (animationDelay > 0)
-                    Thread.Sleep(animationDelay);
+                    Utils.Sleep(animationDelay);
 
                 RecursivelyGenerate(x, y, width, col + 1, depth + 1, animationDelay);
                 RecursivelyGenerate(x, y + col, width, height - col, depth + 1, animationDelay);

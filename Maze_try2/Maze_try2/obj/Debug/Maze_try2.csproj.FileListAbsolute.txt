@@ -65,3 +65,37 @@ D:\dev\ktu-maze\Maze_try2\Maze_try2\obj\Debug\Maze_try2.Properties.Resources.res
 D:\dev\ktu-maze\Maze_try2\Maze_try2\obj\Debug\Maze_try2.csproj.GenerateResource.Cache
 D:\dev\ktu-maze\Maze_try2\Maze_try2\obj\Debug\Maze_try2.exe
 D:\dev\ktu-maze\Maze_try2\Maze_try2\obj\Debug\Maze_try2.pdb
+C:\Users\Gediminas\Documents\Visual Studio 2013\Projects\ktu-maze\Maze_try2\Maze_try2\bin\Debug\Assimp32.dll
+C:\Users\Gediminas\Documents\Visual Studio 2013\Projects\ktu-maze\Maze_try2\Maze_try2\bin\Debug\Assimp64.dll
+C:\Users\Gediminas\Documents\Visual Studio 2013\Projects\ktu-maze\Maze_try2\Maze_try2\bin\Debug\Maze_try2.exe.config
+C:\Users\Gediminas\Documents\Visual Studio 2013\Projects\ktu-maze\Maze_try2\Maze_try2\bin\Debug\Maze_try2.exe
+C:\Users\Gediminas\Documents\Visual Studio 2013\Projects\ktu-maze\Maze_try2\Maze_try2\bin\Debug\Maze_try2.pdb
+C:\Users\Gediminas\Documents\Visual Studio 2013\Projects\ktu-maze\Maze_try2\Maze_try2\bin\Debug\SharpDX.D3DCompiler.dll
+C:\Users\Gediminas\Documents\Visual Studio 2013\Projects\ktu-maze\Maze_try2\Maze_try2\bin\Debug\SharpDX.Direct2D1.dll
+C:\Users\Gediminas\Documents\Visual Studio 2013\Projects\ktu-maze\Maze_try2\Maze_try2\bin\Debug\SharpDX.Direct3D11.dll
+C:\Users\Gediminas\Documents\Visual Studio 2013\Projects\ktu-maze\Maze_try2\Maze_try2\bin\Debug\SharpDX.dll
+C:\Users\Gediminas\Documents\Visual Studio 2013\Projects\ktu-maze\Maze_try2\Maze_try2\bin\Debug\SharpDX.DXGI.dll
+C:\Users\Gediminas\Documents\Visual Studio 2013\Projects\ktu-maze\Maze_try2\Maze_try2\bin\Debug\SharpDX.Toolkit.Compiler.dll
+C:\Users\Gediminas\Documents\Visual Studio 2013\Projects\ktu-maze\Maze_try2\Maze_try2\bin\Debug\SharpDX.Toolkit.dll
+C:\Users\Gediminas\Documents\Visual Studio 2013\Projects\ktu-maze\Maze_try2\Maze_try2\bin\Debug\SharpDX.Toolkit.Game.dll
+C:\Users\Gediminas\Documents\Visual Studio 2013\Projects\ktu-maze\Maze_try2\Maze_try2\bin\Debug\SharpDX.Toolkit.Graphics.dll
+C:\Users\Gediminas\Documents\Visual Studio 2013\Projects\ktu-maze\Maze_try2\Maze_try2\bin\Debug\SharpDX.Direct3D9.dll
+C:\Users\Gediminas\Documents\Visual Studio 2013\Projects\ktu-maze\Maze_try2\Maze_try2\bin\Debug\AssimpNet.dll
+C:\Users\Gediminas\Documents\Visual Studio 2013\Projects\ktu-maze\Maze_try2\Maze_try2\bin\Debug\SharpDX.xml
+C:\Users\Gediminas\Documents\Visual Studio 2013\Projects\ktu-maze\Maze_try2\Maze_try2\bin\Debug\SharpDX.Direct3D11.xml
+C:\Users\Gediminas\Documents\Visual Studio 2013\Projects\ktu-maze\Maze_try2\Maze_try2\bin\Debug\SharpDX.DXGI.xml
+C:\Users\Gediminas\Documents\Visual Studio 2013\Projects\ktu-maze\Maze_try2\Maze_try2\bin\Debug\SharpDX.Toolkit.xml
+C:\Users\Gediminas\Documents\Visual Studio 2013\Projects\ktu-maze\Maze_try2\Maze_try2\bin\Debug\SharpDX.Toolkit.Game.xml
+C:\Users\Gediminas\Documents\Visual Studio 2013\Projects\ktu-maze\Maze_try2\Maze_try2\bin\Debug\SharpDX.Toolkit.Graphics.xml
+C:\Users\Gediminas\Documents\Visual Studio 2013\Projects\ktu-maze\Maze_try2\Maze_try2\bin\Debug\SharpDX.Toolkit.Compiler.xml
+C:\Users\Gediminas\Documents\Visual Studio 2013\Projects\ktu-maze\Maze_try2\Maze_try2\bin\Debug\SharpDX.D3DCompiler.xml
+C:\Users\Gediminas\Documents\Visual Studio 2013\Projects\ktu-maze\Maze_try2\Maze_try2\bin\Debug\SharpDX.Direct2D1.xml
+C:\Users\Gediminas\Documents\Visual Studio 2013\Projects\ktu-maze\Maze_try2\Maze_try2\bin\Debug\SharpDX.Direct3D9.xml
+C:\Users\Gediminas\Documents\Visual Studio 2013\Projects\ktu-maze\Maze_try2\Maze_try2\bin\Debug\AssimpNet.xml
+C:\Users\Gediminas\Documents\Visual Studio 2013\Projects\ktu-maze\Maze_try2\Maze_try2\obj\Debug\Maze_try2.HelpForm.resources
+C:\Users\Gediminas\Documents\Visual Studio 2013\Projects\ktu-maze\Maze_try2\Maze_try2\obj\Debug\Maze_try2.MainForm.resources
+C:\Users\Gediminas\Documents\Visual Studio 2013\Projects\ktu-maze\Maze_try2\Maze_try2\obj\Debug\Maze_try2.Properties.Resources.resources
+C:\Users\Gediminas\Documents\Visual Studio 2013\Projects\ktu-maze\Maze_try2\Maze_try2\obj\Debug\Maze_try2.csproj.GenerateResource.Cache
+C:\Users\Gediminas\Documents\Visual Studio 2013\Projects\ktu-maze\Maze_try2\Maze_try2\obj\Debug\Maze_try2.exe
+C:\Users\Gediminas\Documents\Visual Studio 2013\Projects\ktu-maze\Maze_try2\Maze_try2\obj\Debug\Maze_try2.pdb
+C:\Users\Gediminas\Documents\Visual Studio 2013\Projects\ktu-maze\Maze_try2\Maze_try2\obj\Debug\Maze_try2.csprojResolveAssemblyReference.cache

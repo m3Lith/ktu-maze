@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -19,7 +20,9 @@ namespace Maze_try2
         }
 
         private MazeEngine _mazeEngine;
-        
+
+        private double _delayValue = 0d;
+        private int _behaviorValue = 0;
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -44,11 +47,13 @@ namespace Maze_try2
                 case 2:
                     alg = new SidewinderAlgorithm(rng);
                     break;
+                case 3:
+                    alg = new GrowingTreeAlgorithm(rng);
+                    break;
                 default:
                     throw new Exception("Algorithm index not found");
             }
-            var delay = Convert.ToInt32(string.IsNullOrEmpty(DelayTextBox.Text) ? "0" : DelayTextBox.Text);
-            new Thread(() => alg.GenerateMaze(size, delay)) {IsBackground = true}.Start();
+            new Thread(() => alg.GenerateMaze(size, ref _delayValue, ref _behaviorValue)) {IsBackground = true}.Start();
         }
 
         private void HelpButton_Click(object sender, EventArgs e)
@@ -58,7 +63,7 @@ namespace Maze_try2
 
         private void DelayTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && !(e.KeyChar == '.' && !DelayTextBox.Text.Contains('.') && DelayTextBox.Text != string.Empty))
             {
                 e.Handled = true;
             }
@@ -110,6 +115,17 @@ namespace Maze_try2
                 _mazeEngine.SaveImage(dialog.FileName);
             }
             
+        }
+
+        private void DelayTextBox_TextChanged(object sender, EventArgs e)
+        {
+            _delayValue = 0d;
+            double.TryParse(DelayTextBox.Text, NumberStyles.AllowDecimalPoint, CultureInfo.InvariantCulture, out _delayValue);
+        }
+
+        private void BehaviorTrackBar_Scroll(object sender, EventArgs e)
+        {
+            _behaviorValue = BehaviorTrackBar.Value;
         }
     }
 }

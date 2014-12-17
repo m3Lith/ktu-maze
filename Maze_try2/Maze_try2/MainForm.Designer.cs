@@ -76,7 +76,8 @@ namespace Maze_try2
             this.AlgorithmComboBox.Items.AddRange(new object[] {
             "Kruskal\'s",
             "Recursive division",
-            "Sidewinder"});
+            "Sidewinder",
+            "Growing tree"});
             this.AlgorithmComboBox.Location = new System.Drawing.Point(72, 10);
             this.AlgorithmComboBox.Name = "AlgorithmComboBox";
             this.AlgorithmComboBox.Size = new System.Drawing.Size(226, 21);
@@ -89,6 +90,7 @@ namespace Maze_try2
             this.BehaviorTrackBar.Name = "BehaviorTrackBar";
             this.BehaviorTrackBar.Size = new System.Drawing.Size(297, 45);
             this.BehaviorTrackBar.TabIndex = 3;
+            this.BehaviorTrackBar.Scroll += new System.EventHandler(this.BehaviorTrackBar_Scroll);
             // 
             // BehaviorLabel
             // 
@@ -143,11 +145,12 @@ namespace Maze_try2
             // 
             this.DelayTextBox.Enabled = false;
             this.DelayTextBox.Location = new System.Drawing.Point(188, 146);
-            this.DelayTextBox.MaxLength = 5;
+            this.DelayTextBox.MaxLength = 8;
             this.DelayTextBox.Name = "DelayTextBox";
             this.DelayTextBox.Size = new System.Drawing.Size(79, 20);
             this.DelayTextBox.TabIndex = 9;
             this.DelayTextBox.Text = "0";
+            this.DelayTextBox.TextChanged += new System.EventHandler(this.DelayTextBox_TextChanged);
             this.DelayTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DelayTextBox_KeyPress);
             // 
             // GenerateMazeButton

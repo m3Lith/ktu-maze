@@ -8,6 +8,6 @@ namespace Maze_try2
 {
     interface IMazeAlgorithm
     {
-        void GenerateMaze(int size, int animationDelay);
+        void GenerateMaze(int size, ref double animationDelay, ref int behaviorValue);
     }
 }
